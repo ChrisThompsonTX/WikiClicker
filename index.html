@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="./clicker.css">
+        <meta charset="utf-8">
+        <title>WikiClicker</title>
+        <script src="https://d3js.org/d3.v5.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <script
+        src="https://cdn.rawgit.com/jgallen23/jquery-builder/0.7.0/dist/1.11.1/jquery-css-deprecated-dimensions-effects-event-alias-offset-wrap.min.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        <form id="searchform">
+            <input placeholder="Select Destination Article">
+        </form>
+        <p id="retry"></p>
+        <button type="button" id="demo" class="demo">Demo</button>
+        <button id="reset" type="button" name="button">Reset</button>
+    </div>
+    
+    <div id="article-prev">
+        <div class="header">
+            <img class="logo" src="./assets/Wikipedia_alt_2.png" >
+            <h1 class="title">W<span>IKI-CLICKE</span>R</h1>
+            
+            <div class="tagline">
+                The Wikipedia Game
+            </div>
+            <div id="loading">
+            </div>
+        </div>
+        <div class="results">
+            <a target="_blank" id="article-link" href="https://github.com/kayandrewj/Archaea/blob/master/README.md">
+                <span id="article-prev-title">How to Use Wiki-Clicker</span>
+            </a>
+            <span id="parent-line"></span>
+            <div id="article-prev-text">
+                Search for any destination article. Then click Start. You can pull nodes to grow the tree. The goal is to bridge the gap between the nodes!
+                <br></br>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="network"></canvas>
+
+    <script>
+        (function () {
+            let canvas = document.getElementById("network");
+            ctx = canvas.getContext('2d');
+            resizeWindow();
+
+            function resizeWindow() {
+                window.addEventListener("resize", render, false);
+                render();
+            }
+
+            function render() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+            }
+
+        })();
+    </script>
+
+    <script src="./components/api_util.js"></script>
+    <script src="./components/json_translator.js"></script>
+    <script src="./components/graph.js"></script>
+    <script src="./components/search.js"></script>
+
+</body>
+
+</html>

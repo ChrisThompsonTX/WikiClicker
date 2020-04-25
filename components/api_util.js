@@ -13,7 +13,6 @@ function storeLinks(links) {
     if (links.parse) {
         allLinksArr = links.parse.links;
         linksArr = allLinksArr.filter(link=>!link["*"].includes(":"))
-        console.log(linksArr)
         parseJSON();
     } else {
         handleEmpty();

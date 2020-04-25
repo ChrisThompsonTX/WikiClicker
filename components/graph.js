@@ -1,5 +1,10 @@
 let dragTimer = 0;
 
+// const tooltip = d3.select('body')
+//     .append('div')
+//     .attr('id', 'tooltip')
+//     .attr('style', 'position:absolute; opacticy:0;')
+
 const canvas = d3.select("#network"),
     width = canvas.attr("width"),
     height = canvas.attr("height"),
@@ -7,7 +12,8 @@ const canvas = d3.select("#network"),
     color = d3.scaleOrdinal(d3.schemeCategory10),
     ctx = canvas.node().getContext("2d");
 
-simulation = d3.forceSimulation()
+
+let simulation = d3.forceSimulation()
     .force("x", d3.forceX(width / 2)
         .strength(50))
     .force("y", d3.forceY(height / 2)
@@ -18,7 +24,8 @@ simulation = d3.forceSimulation()
     .force("linkStrength", d3.forceLink()
         .strength(50))
     .force("link", d3.forceLink()
-        .id(function (d) { return d.name; }));
+        .id(d => { return d.name; }));
+    
 
 function data(graph) {
     update();
@@ -63,10 +70,25 @@ function data(graph) {
         return simulation.find(d3.event.x, d3.event.y);
     }
 
-    if (document.getElementById('article-prev-title').innerHTML === "How to Use Archaea") {
+    if (document.getElementById('article-prev-title').innerHTML === "How to Use Wiki-Clicker") {
         getArticlePreview(Eve);
     }
 }
+
+// let addToolTip = d3.select('canvas').selectAll('node').data(data)
+//     .join('node')
+//     .attr('r', 3)
+//     .attr('cy', 5)
+//     .attr('cx', (d, i) => i * 15 + 15)
+//     .on('mouseover', d => {
+//         d3.select('#tooltip').transition(), duration(200).style('opacity', 1).text(d.name)
+//     })
+//     .on('mouseout', () => {
+//         d3.select('#tooltip').style('opacity', 0)
+//     })
+//     .on('mousemove', function () {
+//         d3.select('#tooltip').style('left', (d3.event.pageX + 10) + 'px').style('top', (d3.event.pageY + 10) + 'px')
+//     })
 
 function drawNode(d) {
     ctx.beginPath();
@@ -75,6 +97,7 @@ function drawNode(d) {
     ctx.arc(d.x, d.y, r, 0, 2 * Math.PI);
     ctx.fill();
 }
+
 
 function drawLink(l) {
     ctx.moveTo(l.source.x, l.source.y);

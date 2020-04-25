@@ -97,5 +97,5 @@ function reset() {
     document.getElementById('article-prev-title').innerHTML = "How to Use Wiki-Clicker";
     document.getElementById('article-prev-text').innerHTML = "Search for any destination article. Then click Start. You can pull nodes to grow the tree. The goal is to bridge the gap between the nodes!";
 
-    document.getElementById('article-link').href = `https://github.com/kayandrewj/Archaea/blob/master/README.md`;
+    document.getElementById('article-link').href = `https://github.com/ChrisThompsonTX/WikiClicker`;
 }

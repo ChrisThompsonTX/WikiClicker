@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <title>WikiClicker</title>
         <script src="https://d3js.org/d3.v5.js"></script>
+        <script src="https://kit.fontawesome.com/9ae3c8169d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <script
         src="https://cdn.rawgit.com/jgallen23/jquery-builder/0.7.0/dist/1.11.1/jquery-css-deprecated-dimensions-effects-event-alias-offset-wrap.min.js"></script>
@@ -13,12 +14,13 @@
 
 <body>
     <div class="nav">
+        <button id="reset" type="button" name="button">Reset</button>
         <form id="searchform">
             <input placeholder="Select Destination Article">
+            <button id="search-button"><i class="fas fa-search"></i></button>
         </form>
         <p id="retry"></p>
         <button type="button" id="demo" class="demo">Demo</button>
-        <button id="reset" type="button" name="button">Reset</button>
     </div>
     
     <div id="article-prev">

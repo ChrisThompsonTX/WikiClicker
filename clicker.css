@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
 
 .header {
     position: absolute;
@@ -47,13 +51,27 @@ p:nth-child(3) {
 }
 
 form {
-  position: fixed;
   z-index: 5;
   font-family: 'EB Garamond', sans-serif;
   font-size: 14px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  background-color: #F5F7F2;
+  border-bottom: 1px solid #a7d7f9;
+  border-width: 1px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      rgba(0, 0, 0, 0),
+      #a7d7f9
+    ) 1 100%;
 }
 
 #article-prev {
+  z-index: 1;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -71,6 +89,16 @@ form {
 
 .logo {
     width: 110px;
+}
+
+#search-button {
+  position: relative;
+  right: 26px;
+  z-index: 6;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 0;
 }
 
 
@@ -103,18 +131,16 @@ form {
 }
 
 input {
-  position: fixed;
   z-index: 5;
   width: 300px;
   height: 29px;
-  border: 1px solid #a3bfb1;
-  border-radius: 10px;
-  background-color: rgba(230,230,230,0.5);
+  border: 1px solid #a2a9b1;
+  background-color: rgba(255,255,255,0.5);
   font-size: 17px;
-  padding: 3px;
-  padding-left: 8px;
   font-weight: 300;
   font-family: 'EB Garamond', sans-serif;
+  box-sizing: border-box;
+  padding: 0.4em 1.84615385em 0.4em 0.4em;
 }
 
 input:focus {
@@ -123,16 +149,12 @@ input:focus {
 }
 
 #reset {
-  margin-left: 320px;
   height: 37px;
-  position: fixed;
   background-color: rgba(230, 230, 230, 0.5);
   border: none;
-  border: 1px solid #a3bfb1;
+  border: 1px solid #a7d7f9;
   font-size: 17px;
   font-weight: 300;
-  border-radius: 10px;
-  padding: 3px;
   width: 72px;
   color: #363636;
   font-family: 'EB Garamond', sans-serif;
@@ -182,14 +204,18 @@ a:hover {
 
 
 .nav {
-  margin-top: 5px;
-  width: 400px;
   position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(100vw - 246px);
   right: 0;
   z-index: 1;
-  height: 37px;
+  height: 45px;
   background-color: rgba(245, 247, 242, 0.9);
   box-shadow: 4px 2px 8px 12px rgba(245,247,242,0.9);
+  border-bottom: 1px solid #a7d7f9;
+  background-image: linear-gradient(to bottom, rgba(245,247,242,0), rgba(204,204,255,.2));
 }
 
 .tagline {
@@ -233,14 +259,12 @@ a:hover {
   outline: none;
   border: none;
   background: transparent;
-  text-decoration: underline;
-  color: #757575;
+  color: #0645ad;
+  font-size: 0.8125em;
+  cursor: pointer;
   font-family: 'EB Garamond', sans-serif;
   font-size: 17px;
-  position: absolute;
   z-index: 7;
-  margin-left: 256px;
-  margin-top: 7px;
   font-weight: 300;
   text-decoration-color: #757575;
 }

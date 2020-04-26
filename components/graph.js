@@ -124,6 +124,9 @@ function dragged() {
     dragTimer += 1;
     if (dragTimer === 8) {
         handleSearch(d3.event.subject.name);
+        console.log(document.getElementById("counter").innerHTML)
+        let counter = parseInt(document.getElementById("counter").innerHTML) + 1
+        document.getElementById("counter").innerHTML = counter
     }
 
     d3.event.subject.fx = d3.event.x;

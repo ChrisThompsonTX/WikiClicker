@@ -98,14 +98,13 @@ form {
   font-weight: 300;
   color: #3366bb;
   font-size: 20px;
+  width: 100vw;
 }
 
 #article-prev-text {
   line-height: 22px;
   font-size: 15px;
-  text-align: justify;
-  height: 366px;
-  margin-top: 260px;
+  height: calc(100vh - 260px);
   overflow: scroll;
   width: 220px;
 }
@@ -146,14 +145,14 @@ input:focus {
   height: 100%;
   background-color: transparent;
   border: none;
-  /* border: 1px solid #a7d7f9; */
   font-size: 15px;
   font-weight: 300;
-  color: #0645ad;
+  color: #363636;
   font-family: 'EB Garamond', sans-serif;
   border-width: 1px;
   border-style: solid;
   border-image: linear-gradient( to bottom, rgba(0, 0, 0, 0), #a7d7f9 ) 1 100%;
+  cursor: pointer;
 }
 
 #reset span {
@@ -163,15 +162,45 @@ input:focus {
 
 #reset:hover {
   background-color: rgba(230, 230, 230, 0.99);
-  cursor: pointer;
+}
+
+#reset:hover i {
+  transform: rotate(-360deg);
+  transition: ease-in-out .5s;
+  color: #0073b1;
 }
 
 #reset:focus {
   outline: none;
 }
 
-.social {
-  margin-left: 402px;
+.social-divider {
+  height: 80%;
+  width: 1px;
+  background-image: linear-gradient(transparent, grey ,transparent);
+}
+
+.horizontal-div {
+  width: 80%;
+  height: 1px;
+  background-image: linear-gradient(0.25turn, transparent, grey ,transparent);
+  margin: 5px 0;
+}
+
+.fab {
+  padding-right: 4px;
+}
+
+a:hover {
+  background-color: rgba(230, 230, 230, 0.99);
+}
+
+a:hover .fa-linkedin {
+  color: #0073b1;
+}
+
+a:hover .fa-github {
+  color: #f0704a;
 }
 
 a {
@@ -183,12 +212,10 @@ a {
   font-size: 17px;
   font-weight: 300;
   color: #363636;
-  padding: 14px;
+  padding: 0 14px;
   text-decoration: none;
   font-family: 'EB Garamond', sans-serif;
 }
-
-
 
 .nav {
   position: absolute;
@@ -235,18 +262,17 @@ a {
 }
 
 #retry {
-  margin-top: -24px;
-  margin-left: 43px;
   font-size: 11px;
   color: maroon;
+  top: 18px;
+  width: 300px;
+  text-align: center;
 }
 
 #article-link {
   width: 220px;
   height: auto;
-  padding: 0;
-  margin: 0;
-  border: 13px solid rgba(237,238,236,0.2);
+  padding: 5px;
   text-decoration: none;
   font-weight: 300;
   background-color: rgba(237,238,236,0.7);
@@ -264,19 +290,51 @@ a {
   outline: none;
   border: none;
   background: transparent;
-  color: #0645ad;
+  color: #363636;
   cursor: pointer;
   font-family: 'EB Garamond', sans-serif;
-  font-size: 17px;
+  font-size: 15px;
   z-index: 7;
   font-weight: 300;
   text-decoration-color: #757575;
+  height: 100%;
+}
+
+.demo span {
+  font-size: 17px;
 }
 
 .demo:hover {
   color: #363636;
   cursor: pointer;
+  background-color: rgba(230, 230, 230, 0.99);
 }
+
+.demo:hover i {
+  color: lightseagreen;
+}
+
+.counter-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding-right: 14px;
+}
+
+#counter {
+  font-size: 17px;
+  width: 20px;
+  text-align: center;
+  /* border: 1px solid #a2a9b1;
+  background-color: rgba(255,255,255,0.5); */
+}
+
+.fa-mouse-pointer {
+  padding-right: 4px;
+  font-size: 15px;
+}
+
 
 #loading {
   height: 7px;
@@ -289,4 +347,46 @@ a {
   opacity: .7;
   transition: 100ms linear;
   /*transition: 100ms ease;*/
+}
+
+@-webkit-keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+@keyframes hvr-icon-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+.hvr-icon-pop {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-icon-pop .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-icon-pop:hover .hvr-icon, .hvr-icon-pop:focus .hvr-icon, .hvr-icon-pop:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-pop;
+  animation-name: hvr-icon-pop;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }

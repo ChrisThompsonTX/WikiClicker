@@ -16,17 +16,23 @@
 <body>
     <div class="nav">
         <div class="nav-left">
-            <a target="_blank" href="https://www.linkedin.com/in/kayandrewj/"><i class="fab fa-linkedin"></i> Linkedin</a>
-            <a target="_blank" href="https://www.github.com/kayandrewj/"><i class="fab fa-github"></i> Github</a>
+            <a target="_blank" href="https://www.linkedin.com/in/chris-thompson-832015179/"><i class="fab fa-linkedin"></i>Linkedin</a>
+            <div class="social-divider"></div>
+            <a target="_blank" href="https://github.com/ChrisThompsonTX"><i class="fab fa-github"></i>Github</a>
         </div>
         <div class="nav-right" >
+            <div class="counter-container">
+                <i class="fas fa-mouse-pointer"></i>
+                Click Count:
+                <h1 id="counter">0</h1>
+            </div>
             <button id="reset" type="button" name="button"><i class="fas fa-undo-alt"></i><span> Reset</span></button>
             <form id="searchform">
                 <input placeholder="Select Destination Article">
                 <button id="search-button"><i class="fas fa-search"></i></button>
+                <p id="retry"></p>
             </form>
-            <p id="retry"></p>
-            <button type="button" id="demo" class="demo"><i class="fas fa-play"></i> Start</button>
+            <button type="button" id="demo" class="demo hvr-icon-pop"><i class="fas fa-play hvr-icon"></i><span> Start</span></button>
         </div>
     </div>
     
@@ -42,9 +48,10 @@
             </div>
         </div>
         <div class="results">
-            <a target="_blank" id="article-link" href="https://github.com/kayandrewj/Archaea/blob/master/README.md">
+            <a target="_blank" id="article-link" href="https://github.com/ChrisThompsonTX/WikiClicker">
                 <span id="article-prev-title">How to Use Wiki-Clicker</span>
             </a>
+            <div class="horizontal-div"></div>
             <span id="parent-line"></span>
             <div id="article-prev-text">
                 Search for any destination article. Then click Start. You can pull nodes to grow the tree. The goal is to bridge the gap between the nodes!

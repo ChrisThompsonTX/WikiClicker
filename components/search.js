@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('reset').onclick = () => {
+        document.getElementById('counter').innerHTML = 0;
         reset();
     };
 
@@ -18,6 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         data(dataGraph);
     };
 
-    
+
 
 });

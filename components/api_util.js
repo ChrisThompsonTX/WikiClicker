@@ -71,10 +71,10 @@ function getArticlePreview(title) {
     $.ajax({
         url: `https://en.wikipedia.org/w/api.php?format=json&redirects=1&action=query&prop=extracts&exintro=&explaintext=&titles=${title}`,
         dataType: 'jsonp',
-    }).then(result => injectArticlePreview(result));
+    }).then(result => articleText(result));
 }
 
-function injectArticlePreview(result) {
+function articleText(result) {
     let pagesJsonKey = Object.keys(result.query.pages)[0];
     document.getElementById('article-prev-title').innerHTML = result.query.pages[pagesJsonKey].title;
     document.getElementById('article-prev-text').innerHTML = result.query.pages[pagesJsonKey].extract || "";

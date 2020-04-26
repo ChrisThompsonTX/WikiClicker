@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="./clicker.css">
         <meta charset="utf-8">
         <title>WikiClicker</title>
+        <link rel="icon" type="image/png" href="./assets/WC-icon.svg">
         <script src="https://d3js.org/d3.v5.js"></script>
         <script src="https://kit.fontawesome.com/9ae3c8169d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
@@ -14,13 +15,19 @@
 
 <body>
     <div class="nav">
-        <button id="reset" type="button" name="button">Reset</button>
-        <form id="searchform">
-            <input placeholder="Select Destination Article">
-            <button id="search-button"><i class="fas fa-search"></i></button>
-        </form>
-        <p id="retry"></p>
-        <button type="button" id="demo" class="demo">Demo</button>
+        <div class="nav-left">
+            <a target="_blank" href="https://www.linkedin.com/in/kayandrewj/"><i class="fab fa-linkedin"></i> Linkedin</a>
+            <a target="_blank" href="https://www.github.com/kayandrewj/"><i class="fab fa-github"></i> Github</a>
+        </div>
+        <div class="nav-right" >
+            <button id="reset" type="button" name="button"><i class="fas fa-undo-alt"></i><span> Reset</span></button>
+            <form id="searchform">
+                <input placeholder="Select Destination Article">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </form>
+            <p id="retry"></p>
+            <button type="button" id="demo" class="demo"><i class="fas fa-play"></i> Start</button>
+        </div>
     </div>
     
     <div id="article-prev">

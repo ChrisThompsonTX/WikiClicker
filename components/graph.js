@@ -1,17 +1,12 @@
 let dragTimer = 0;
 
-// const tooltip = d3.select('body')
-//     .append('div')
-//     .attr('id', 'tooltip')
-//     .attr('style', 'position:absolute; opacticy:0;')
 
 const canvas = d3.select("#network"),
-    width = canvas.attr("width"),
-    height = canvas.attr("height"),
-    r = 6,
-    color = d3.scaleOrdinal(d3.schemeCategory10),
-    ctx = canvas.node().getContext("2d");
-
+width = canvas.attr("width"),
+height = canvas.attr("height"),
+r = 6,
+color = d3.scaleOrdinal(d3.schemeCategory10),
+ctx = canvas.node().getContext("2d");
 
 let simulation = d3.forceSimulation()
     .force("x", d3.forceX(width / 2)
@@ -26,6 +21,7 @@ let simulation = d3.forceSimulation()
     .force("link", d3.forceLink()
         .id(d => { return d.name; }));
     
+
 
 function data(graph) {
     update();
@@ -124,7 +120,6 @@ function dragged() {
     dragTimer += 1;
     if (dragTimer === 8) {
         handleSearch(d3.event.subject.name);
-        console.log(document.getElementById("counter").innerHTML)
         let counter = parseInt(document.getElementById("counter").innerHTML) + 1
         document.getElementById("counter").innerHTML = counter
     }

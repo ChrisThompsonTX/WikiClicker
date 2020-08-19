@@ -4,12 +4,11 @@ body {
 }
 
 .header {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: auto;
+    height: 20vh;
     margin-top: 6px;
     z-index: 1;
     width: 220px;
@@ -17,9 +16,8 @@ body {
 
 .title {
   font-family: 'EB Garamond', sans-serif;
-  position: absolute;
   font-size: 28px;
-  margin-top: 68px;
+  margin: 0px;
   color: #363636;
   font-weight: 200;
 }
@@ -251,10 +249,8 @@ a {
 
 .tagline {
   font-family: 'EB Garamond', sans-serif;
-  position: absolute;
   font-size: 12px;
-  margin-top: 89px;
-  width: 220px;
+  width: 100%;
   font-weight: 400;
   color: #363636;
   text-align: center;
@@ -277,7 +273,7 @@ a {
   font-weight: 300;
   background-color: rgba(237,238,236,0.7);
   padding-bottom: 2px;
-  margin-top: 186px;
+  margin-top: 6px;
   margin-left: -13px;
 }
 

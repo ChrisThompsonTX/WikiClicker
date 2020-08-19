@@ -89,8 +89,8 @@ function data(graph) {
 function drawNode(d) {
     ctx.beginPath();
     ctx.fillStyle = color(d.depth);
-    ctx.moveTo(d.x, d.y);
     ctx.arc(d.x, d.y, r, 0, 2 * Math.PI);
+    ctx.moveTo(d.x, d.y);
     ctx.fill();
 }
 
